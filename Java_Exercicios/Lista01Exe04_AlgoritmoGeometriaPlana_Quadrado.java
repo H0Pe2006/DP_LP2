@@ -1,52 +1,63 @@
-
 import java.util.Scanner;
 
+public class Lista01Exe04_AlgoritmoGeometriaPlana_Quadrado {
 
-public class Lista01Exe04_AlgoritmoGeometriaPlana_Quadrado{
+     final static Scanner LER = new Scanner(System.in); 
+     public static void main(String[] args) { 
+        
 
-    final static Scanner LER = new Scanner(System.in);
-
-    public static void main(String[] args) {
-    
         float lado = 0f;
-        float Area = 0f;
-        float Perimetro = 0f;
+        float perimetro = 0f;
+        float area = 0f;
 
         lado = lerLado(lado);
 
-        Perimetro = perimetro(lado);
+        area = calcArea(lado);
 
-        Area = area(lado);
+        perimetro = calcPerimetro(lado);
 
-        resposta(Perimetro,Area);
+        imprimirArea(area);
+
+        imprimirPerimetro(perimetro);
 
     }
 
-    public static float lerLado(float x) {
+ 
+    public static float lerLado(float lado) {
 
-        System.out.println("Digite o lado do quadrado: "); 
-        x = LER.nextFloat();
+        System.out.println("Digite a medida do lado do quadrado: "); 
+        lado = LER.nextFloat(); 
 
-        return x; 
+        return lado; 
     }
 
-    public static float perimetro(float y) {
+    
+    public static float calcArea(float lado) {
 
-        y *= 4;
+        float area = 0f; 
 
-        return y; 
+        area = (lado*lado);
+
+        return area; 
+
     }
 
-    public static float area(float z) {
+    public static float calcPerimetro(float lado) {
 
-        z ^ z;
+        float perimetro = 0f; 
 
-        return z;
+        perimetro = lado * 4;
+
+        return perimetro;
+
     }
 
-    public static void resposta(float x, float y) {
+    
+    public static void imprimirArea(float area) {
+        System.out.println("A área do quadrado é: " + area); 
+    }
 
-        System.out.printf("O perimetro do seu quadrado é: %.1f\n", x);
-        System.out.printf("A área do seu quadrado é: %.1f\n", y);
+    public static void imprimirPerimetro(float perimetro) {
+        System.out.printf("O perímetro do quadrado é: %.1f %n", perimetro); 
     }
 }
