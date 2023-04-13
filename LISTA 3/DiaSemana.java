@@ -3,7 +3,7 @@ import java.util.Scanner; // importação do pacote Scanner
 public class DiaSemana { // Classe do programa
 
     // Mecanismo responsável por gerenciar as entradas do teclado e colocar nas
-    // variáveis
+    // variáveis/
     final static Scanner LER = new Scanner(System.in);
 
     // método principal do programa aqui que tudo inicia
