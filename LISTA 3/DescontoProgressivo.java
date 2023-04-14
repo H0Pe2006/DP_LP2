@@ -11,9 +11,10 @@ public class DescontoProgressivo { // Classe do programa
 
         // chamada e passagem do parâmetro para o método lerIdade
         String nome = lerNome(nome);
-        float precoProdut = lerPreco(precoProdut);
+        Double precoProdut = lerPreco(precoProdut);
         int quantProdut = lerQuantidade(quantProdut);
-
+        Double precoTotal = 0d;
+ 
         // chamada e passagem do parâmetro para o método imprimirClasseEleitoral
         imprimirPreco(precoTotal);
         descontProdut(precoTotal, quantProdut);
@@ -25,13 +26,13 @@ public class DescontoProgressivo { // Classe do programa
 
         System.out.println("Digite o nome do produto: "); // Mensagem para o usuário
         nome = LER.next(); // LER pega o próximo int do teclado para colocar na variável idade
-
+        return nome;
     }
 
     // Definição do método classificarEleitor que recebe como parâmetro a idade e retorna a string classe eleitoral
-    public static Float lerPreco(float precoProdut) {
+    public static double lerPreco(double precoProdut) {
         System.out.println("Digite o preço do produto: ");
-        precoProdut = LER.nextFloat();
+        precoProdut = LER.nextDouble();
         return precoProdut;
     }
 
@@ -41,26 +42,27 @@ public class DescontoProgressivo { // Classe do programa
         return quantProdut;
     } 
 
-    public static void precoTotal(int quantProdut, float precoProdut){
-        Float precoTotal = quantProdut * precoProdut;
+    public static void precoTotal(int quantProdut, double precoProdut){
+        double precoTotal = quantProdut * precoProdut;
         System.out.println("O preço total sem o desconto foi de: "+precoTotal);
     } 
 
-    public static void totalPagar(float precoTotal, float descont){
-        Float totalPagar= precoTotal * descont;
+    public static Double totalPagar(double precoTotal, double descont){
+        Double totalPagar= precoTotal * descont;
         System.out.println("O preço total sem o desconto foi de: "+precoTotal);
+        return totalPagar;
     }
 
-    public static float descont(int quantProdut, float precoTotal){
+    public static Double descontProdut(int quantProdut, Double precoTotal, Double Descont){
         if(quantProdut <= 5){
-            float descont = (precoTotal * 0.02);
-            return descont;
-        }if(quantProdut > 5){
-            float descont = (precoTotal * 0.03);
-            return descont;
-        }if(quantProdut > 10){
-            float descont = (precoTotal * 0.05);
-            return descont;
+            Descont = (precoTotal * 0.02);
+        }else if(quantProdut > 5){
+            Descont = (precoTotal * 0.03);
+        }else if(quantProdut > 10){
+            Descont = (precoTotal * 0.05);
         }
+        return Descont;
     }
+
+    public static void imprimirPreco
 }
