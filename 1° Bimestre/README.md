@@ -1,4 +1,4 @@
-## 1° Bimestre de DP_LP2 - Pasta
+## 1° Bimestre de DP_LP2 - Atividades
 ### Aluno:
 * Luiz Felipe Salbego Esperança
 ### Curso:
