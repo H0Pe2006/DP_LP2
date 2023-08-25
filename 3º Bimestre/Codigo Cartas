@@ -1,13 +1,15 @@
 import java.util.Scanner;
 
-public class Cartas{
+public class Main{
     
     final static Scanner LER = new Scanner(System.in);
 
     public static void main(String[] args) {
         Boolean A = false;
         Boolean B = false;
-        int[] cartas = new int[5];
+        int n = 5;
+        
+        int[] cartas = new int[n];
 
         cartas = lerCartas(cartas);
 
@@ -24,15 +26,15 @@ public class Cartas{
     }
 
     public static Boolean opA(int [] cartas, Boolean A) {
-        for (int i = 0; i < cartas.length; i++){
+        for (int i = 0; i < cartas.length - 1; i++){
             if(cartas[i]<cartas[i+1]){
                 A = true;
             }
         }return A;
     }
 
-    public static Boolean opB(int [] cartas, Boolean B) {
-        for (int i = 0; i < cartas.length; i++){
+    public static Boolean opB(int [] cartas, Boolean B) { 
+        for (int i = 0; i < cartas.length - 1; i++){ 
             if(cartas[i]>cartas[i+1]){
                 B = true;
             }
@@ -41,9 +43,9 @@ public class Cartas{
                 
 
     public static void imprimiresult(Boolean A, Boolean B){
-        if(A==true){
+        if(A==true && B==false){
             System.out.println("C");
-        }else if(B==true){
+        }else if(B==true && A==false){
             System.out.println("D");
         }else{
             System.out.println("N");
